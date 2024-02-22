@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact from to email using Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="Sendemail(); reset(); return false;">
+            <h3>Get in Touch</h3>
+            <input type="text" id="Name" placeholder="Your name" required>
+            <input type="text" id="Eamil" placeholder="Email id" required>
+            <input type="text" id="Phone no." placeholder="Phone no." required>
+            <textarea id="message" rows="4" placeholder="How can i help you?"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function Sendemail(){
+            Email.send({
+                    Host : "smtp.elasticemail.com",
+                    Username : "ankitj450331@gmail.com",
+                    Password : "F17917174FB4EF106A7E228829145964C02C",
+                    To : 'jangdeankit13@gmail.com',
+                    From : "ankitj450331@gmail.com",
+                    Subject : "New Contact form Enquiry",
+                    Body : "Hello i am a user."
+                }).then(
+                message => alert("Email sent successfully")
+);
+
+        }
+    </script>
+</body>
+</html>
